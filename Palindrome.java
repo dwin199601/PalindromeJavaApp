@@ -1,11 +1,14 @@
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class Palindrome {
     public static void main(String[] args) {
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a phrase to determine whether it's a palindrome phrase or not: ");
-        String userPhrase = input.nextLine();
+        JOptionPane.showMessageDialog(null, "Welcome to the palindrome app!");
+
+        String userPhrase = JOptionPane.showInputDialog(null,
+                "Enter a phrase to determine whether it's a palindrome phrase or not: ");
         String userPhraseLowerCase = userPhrase.replaceAll("[, . ! ? ' + - * ()]", "").toLowerCase();
         String palindromePhrase = "";
         for (int i = userPhraseLowerCase.length(); i > 0; i--) {
@@ -14,10 +17,12 @@ public class Palindrome {
         }
         System.out.println(palindromePhrase);
         if (userPhraseLowerCase.equals(palindromePhrase)) {
-            System.out.println("\nThe phrase is a palindrome");
+
+            JOptionPane.showMessageDialog(null, "The phrase is a palindrome!");
 
         } else
-            System.out.println("\nThe phrase isn't a palindrome");
+
+            JOptionPane.showMessageDialog(null, "The phrase isn't a palindrome!");
 
     }
 }
